@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+           animation-name: box;
+           animation-duration: 4s;
+           animation-iteration-count: 4;
+        }
+        @keyframes box {
+            0%{
+                transform: translate(0px,0px);
+            }
+            25%{
+                transform: translate(500px, 0px);
+            }
+            50%{
+                transform: translate(500px, 500px);
+            }
+            75%{
+                transform: translate(0px, 500px);
+            }
+            100%{
+                transform: translate(0px, 0px);
+            }
+        }
+           
+       
+
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

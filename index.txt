@@ -1,0 +1,34 @@
+tansform: - 
+        tanslate(x, y). unit use px, %, vh, cm , inch , mm, 
+        x = horizontal way 
+        y = vertical way
+        tanslateX() in this we tanslate position on x axis
+        tanslateY() on y axis
+
+
+        rotate(x, y) unit deg
+        rotateX("x"deg);
+        rotateY("y"deg);
+
+        scale() unit number. like 0 - 1 
+        1 = 100%
+        0.5 = 50%
+        2 = 200%
+        scaleX() in this we scale on x axis
+        scaleY() on y axis
+
+        skew() unit deg
+        skewX("x"deg);
+        skewY("y"deg);
+
+animation:
+        animation-name: write any name ;
+        animation-duration: 2s;
+        animation-iteration-count: 2; how many time you want run this animation
+        animation-timing-function: ease-in-out; how much time you want to run this animation
+        animation-delay: 2s; how much time you want to wait before running this animation
+        animation-shorthand: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode animation-play-state;        
+
+      
+
+        
