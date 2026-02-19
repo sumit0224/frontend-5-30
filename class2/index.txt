@@ -1,0 +1,15 @@
+css :-
+animation, gradient, background, pseudo element, pseudo class
+text style:-
+bg img, text color, text size, text font, text align, text decoration, text transform, text shadow
+border style:-
+border radius, border color, border width, border style, border collapse, border spacing
+display:-
+display: none, display: block, display: inline, display: inline-block flex, grid
+flex:-
+justify-content, align-items, flex-direction, flex-wrap, flex-grow, flex-shrink
+grid:-
+grid-template-columns, grid-template-rows, grid-template-areas, grid-auto-columns, grid-auto-rows, grid-auto-flow
+position:-
+position: static, position: relative, position: absolute, position: fixed, position: sticky
+

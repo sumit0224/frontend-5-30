@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* hover jab bhi ap kis element k uper move kroge using mouse tab hover active hoga */
+        .box{
+            width: 100px;
+            height: 200px;
+            background-color: brown;
+            transition: all 900ms ease;
+        }
+
+        .box:hover{
+            background-color: rgb(71, 165, 42);
+        }
+        /* focus yeh input fields pr lagta h jab ap kis input m kuch likh rhe ha tab work krega  */
+       
+        #inp:focus{
+            border: 2px solid red;
+        }
+       #inp{
+        outline: none;
+        border: none;
+        width: 100%;
+       }
+       .search{
+        padding: 10px ;
+        width: 300px;
+      
+        border: 2px solid black;
+       }
+
+       /* active jab ap kisi element pr click krte ho tab active work krega */
+       .btn:active{
+        background-color: red;
+        transform: scale(0.8);
+        transition: all 900ms ease;
+       }
+
+       /* visited yah jab work kregi jab ap kis link pr click kr chuke ho */
+       a:visited{
+        color: red;
+       }
+
+    </style>
+</head>
+<body>
+<!-- <div class="search">
+<input id="inp" type="text" placeholder="enter your task">
+</div> -->
+
+<!-- <button class="btn">click me</button> -->
+<a href="https://www.google.com" target="_blank">google</a>
+<a href="https://www.facebook.com" target="_blank">facebook</a>
+</body>
+</html>
