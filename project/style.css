@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    height: 100%;
+}
+
+/* green scetion css */
+#green-section{
+    width: 100%;
+    height: 100vh;
+    background: url("./img/img.png");
+    background-position: center;
+    background-size: cover;
+}
+#navbar{
+    height: 60px;
+    align-items: center;
+    color : white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+#navbar .links{
+    display: flex;
+    gap: 30px;
+}
+#navbar .links a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+#navbar .icons{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+#navbar .icons :nth-child(2)::after{
+    content: "  | 3 |";
+
+    gap: 5px;
+    
+}
+#navbar .icons :nth-child(3)::after{
+    content: "  | 1 |"; 
+    
+}
+.heading{
+    width: 100%;
+    position: relative;
+    color: white;
+    height: 100vh;
+}
+
+.heading .search{
+    width: 200px;
+    border-bottom: 1px solid rgb(189, 186, 186);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    
+}
+.heading .search input{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 5px 10px;
+
+
+}
+.heading .title{
+    font-size: 45px;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+.heading .title button{
+   padding: 10px 40px;
+   background: white;
+   color: black;
+   border: none;
+   outline: none;
+   box-shadow: 5px 5px  ;
+ 
+
+}
+
+/* white section css */
+#white-section{
+    padding: 20px 10px;
+}
+#white-section #title{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+}
+#white-section #title > h2{
+   font-size: 40px;
+  
+}
+#white-section #title .left{
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 20px;
+
+}
+#white-section #title button{
+
+   padding: 10px 20px;
+    background-color: black;
+    color: white;
+    
+   
+
+}
+
+#card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+#card-container #card{
+    width: 250px;
+    height: 400px;
+    
+  
+}
+#card-container #card .card-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+#card-container #card img{
+    width: 250px;
+    height: 350px;
+    
+}
+/* grey section css */
+#gray-section{
+    background-color: rgb(84, 83, 83);
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+#gray-section > h1{
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: gray;
+    transform: translate(-50%, -50%);
+}
+#gray-section #overlay {
+   width: 100vw;
+   height: 50vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+#gray-section #overlay > h1{
+   
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
