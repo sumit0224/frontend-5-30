@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+
+}
+.carousel{
+    width: 100%;
+   
+    background: #5c5b5b;
+    position: relative  ;
+    overflow: hidden;
+}
+.carousel .slide{
+   
+    display: flex;
+    
+  
+    align-items: center;
+    justify-content: center;
+
+}
+.slide img{
+    
+    width: 300px;
+    height: 300px;
+}

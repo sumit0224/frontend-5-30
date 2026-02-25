@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+        .card{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            background-image: url('https://plus.unsplash.com/premium_photo-1771709406296-f58baaae22f1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5NXx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-size: cover;
+          
+            transition: all 2s ease;
+            
+        }
+        .overlay{
+           width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        display: none;
+        }
+        .overlay .top{
+           text-align: end;
+           padding: 10px;
+           color: grey;
+        }
+        .overlay .top i{
+           background-color: white;
+           border-radius: 10px;
+
+           padding: 10px;
+           color: grey;
+        }
+        .card:hover .overlay{
+            display: block;
+        }
+        
+       
+
+    </style>
+</head>
+
+<body>
+  <div class="main">
+      <div class="card">
+        <div class="overlay">
+            <div class="top">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-add-large-line"></i>
+            </div>
+
+
+        </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
