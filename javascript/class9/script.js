@@ -73,11 +73,30 @@
 
 // console.log(sum)
 
-let num = [10, 20, 30, 40]
+// let num = [10, 20, 30, 40]
 
-let a = num.map((item, index)=>{
-    return item + index
-})
-console.log(a)
+// let a = num.map((item, index)=>{
+//     return item + index
+// })
+// console.log(a)
 
+
+// HOF , callback fq, object, object method, opps, promise, trycatch, asyn await, localstoarge, fetch, dom
+
+
+// ['hi','hello','yes']
+// let arr = ['hi','hello','yes']
+
+// let count = arr.reduce((acc, curr)=>{
+    
+//     return acc + curr.length //7 + yes 3 = 10
+// }, 0)
+// console.log(count)
+
+// Flatten a 2D array [[1,2],[3,4],[5,6]] into a single array.
+
+// let falt = [[1,2],[3,4],[5,6]].reduce((acc, curr)=>{
+//     return acc.concat(curr)
+// }, [])
+// console.log(falt)
 
