@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+        #cursor{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            
+            transition: all 3s, ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.querySelector("#root");
+        const cursor = document.createElement("div")
+        root.before(cursor)
+        cursor.setAttribute("id", "cursor");
+
+        document.addEventListener("mousemove",(e)=>{
+            
+            cursor.style.top = e.clientY + "px"
+            cursor.style.left = e.clientX + "px"
+        })
+        
+    </script>
+</body>
+</html>
