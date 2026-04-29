@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shopping Cart | ShopVibrant</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5f5e5e",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-tint": "#a73a00",
+                        "surface-container-low": "#f5f3f3",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffdbce",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fbf9f9",
+                        "on-secondary-container": "#636262",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dbdad9",
+                        "on-primary-fixed-variant": "#802a00",
+                        "primary-fixed-dim": "#ffb59a",
+                        "outline-variant": "#e4beb1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fbf9f9",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#2a2c2c",
+                        "on-surface-variant": "#5b4137",
+                        "tertiary": "#5d5f5f",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efeded",
+                        "inverse-surface": "#303031",
+                        "primary-container": "#ff5c00",
+                        "on-primary-fixed": "#370e00",
+                        "surface": "#fbf9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#e2dfde",
+                        "inverse-on-surface": "#f2f0f0",
+                        "tertiary-container": "#929393",
+                        "inverse-primary": "#ffb59a",
+                        "on-primary-container": "#521800",
+                        "outline": "#8f7065",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-variant": "#e3e2e2",
+                        "primary": "#a73a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+    <header class="bg-surface border-b border-surface-container-high shadow-sm h-20 w-full sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 h-full flex justify-between items-center">
+            <a href="/index.html">
+                <div class="text-2xl font-bold text-primary tracking-tight">ShopVibrant</div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="#">Shop</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="#">Categories</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="#">Deals</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                    href="#">New Arrivals</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <button class="text-on-surface-variant hover:text-primary transition-all active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                </button>
+                <button
+                    class="relative text-primary font-semibold border-b-2 border-primary pb-1 flex items-center gap-1 active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart"
+                        style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+                    <span
+                        class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container text-[10px] w-4 h-4 flex items-center justify-center rounded-full" id="cart-value"></span>
+                </button>
+                <button class="text-on-surface-variant hover:text-primary transition-all active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="person">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-8 py-12 min-h-screen">
+        <div class="flex flex-col gap-4 mb-8">
+            <h1 class="text-32px font-bold tracking-tight text-on-surface" style="font-size: 32px; line-height: 40px;">
+                Your Cart</h1>
+            <p class="text-on-surface-variant">Review your items before proceeding to checkout.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+            <div class="flex-1 w-full space-y-6" id="cart-grid">
+             
+                
+                <div class="pt-6 border-t border-surface-container-high flex justify-between items-center">
+                    <a class="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="#">
+                        <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                        Continue Shopping
+                    </a>
+                    <p class="text-on-surface-variant text-body-sm">Prices include applicable taxes.</p>
+                </div>
+            </div>
+            <aside class="w-full lg:w-[400px] sticky top-32">
+                <div class="bg-surface-container-low rounded-xl p-8 shadow-sm border border-surface-container-high">
+                    <h2 class="text-24px font-bold text-on-surface mb-6" style="font-size: 24px;">Order Summary</h2>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between text-on-surface-variant">
+                            <span>Subtotal</span>
+                            <span class="text-on-surface font-medium">$444.00</span>
+                        </div>
+                        <div class="flex justify-between text-on-surface-variant">
+                            <span>Shipping</span>
+                            <span
+                                class="text-primary-container font-semibold uppercase text-xs tracking-wider flex items-center">Free</span>
+                        </div>
+                        <div class="flex justify-between text-on-surface-variant">
+                            <span>Estimated Tax</span>
+                            <span class="text-on-surface font-medium">$35.52</span>
+                        </div>
+                        <div class="pt-4 border-t border-surface-container-highest flex justify-between items-center">
+                            <span class="text-lg font-bold">Total</span>
+                            <span class="text-2xl font-extrabold text-primary">$479.52</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full bg-primary-container text-on-primary-container h-14 rounded-lg font-bold text-lg hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 mb-4">
+                        Checkout
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                    <div class="flex flex-col gap-3">
+                        <div
+                            class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg border border-surface-container text-body-sm">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="local_shipping">local_shipping</span>
+                            <span>Free express delivery on this order</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg border border-surface-container text-body-sm">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="verified_user">verified_user</span>
+                            <span>Secure encrypted checkout</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <label class="block text-label-bold text-on-surface-variant mb-2">PROMO CODE</label>
+                        <div class="flex gap-2">
+                            <input
+                                class="flex-1 bg-surface-container-lowest border-surface-container-highest rounded-lg h-10 px-3 text-body-sm focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all"
+                                placeholder="Enter code" type="text" />
+                            <button
+                                class="px-4 bg-on-surface text-on-primary rounded-lg font-semibold text-sm hover:bg-opacity-80 transition-all">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="bg-surface-container-low border-t border-surface-container-highest w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-8 py-12">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-8 border-b border-surface-container-high">
+                <div class="text-xl font-bold text-on-surface">ShopVibrant</div>
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                    <a class="text-on-surface-variant text-body-sm hover:text-primary hover:underline transition-all"
+                        href="#">About Us</a>
+                    <a class="text-on-surface-variant text-body-sm hover:text-primary hover:underline transition-all"
+                        href="#">Customer Support</a>
+                    <a class="text-on-surface-variant text-body-sm hover:text-primary hover:underline transition-all"
+                        href="#">Privacy Policy</a>
+                    <a class="text-on-surface-variant text-body-sm hover:text-primary hover:underline transition-all"
+                        href="#">Terms of Service</a>
+                    <a class="text-on-surface-variant text-body-sm hover:text-primary hover:underline transition-all"
+                        href="#">Shipping Info</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-on-surface-variant text-body-sm">© 2024 ShopVibrant. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                        data-icon="brand_facebook">social_leaderboard</span>
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                        data-icon="brand_instagram">photo_camera</span>
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+                        data-icon="brand_twitter">close</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

@@ -1,91 +1,41 @@
-const product = [
-    {
-        Image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb",
-        title: "UltraBoost Speed Pro",
-        price: "$149.00",
-        rating: "4.7",
-        wishlist: false,
-        type: "new"
-    },
-    {
-        Image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a",
-        title: "AirFlex Max 2025",
-        price: "$139.00",
-        rating: "4.6",
-        wishlist: true,
-        type: "trending"
-    },
-    {
-        Image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-        title: "StreetRunner Elite",
-        price: "$119.00",
-        rating: "4.3",
-        wishlist: false,
-        type: "sale"
-    },
-    {
-        Image: "https://images.unsplash.com/photo-1528701800489-20be3c8c1c92",
-        title: "Velocity Knit ZR",
-        price: "$159.00",
-        rating: "4.8",
-        wishlist: true,
-        type: "premium"
-    },
-    {
-        Image: "https://images.unsplash.com/photo-1584735175315-9d5df23be620",
-        title: "ComfyWalk Lite",
-        price: "$99.00",
-        rating: "4.2",
-        wishlist: false,
-        type: "budget"
-    }
-];
-
-let body = document.querySelector("body")
-
-const grid = document.querySelector("#product-grid")
-
-function showProduct() {
-    product.map((items, index) => {
-        let card = document.createElement("div")
-        card.innerHTML = `<div
-                    class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-surface-variant flex flex-col">
-                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low">
-                        <img alt="Product"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="red high-performance running sneakers floating on a clean white studio background with sharp lighting"
-                            src="${items.Image}" />
-                        <button
-                            class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all">
-                            <span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
-                        </button>
-                        <div
-                            class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${items.type ==="trending"? "bg-yellow-400": ""}">
-                            ${items.type}</div>
-                    </div>
-                    <div class="p-5 flex flex-col flex-grow">
-                        <div class="flex items-center gap-1 mb-2">
-                            <span class="material-symbols-outlined text-orange-400 text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                            <span class="text-sm font-bold text-on-surface">${items.rating}</span>
-                            <span class="text-xs text-secondary">(124 reviews)</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-on-surface mb-2 leading-tight font-title-sm"> ${items.title}</h3>
-                        <div class="mt-auto flex items-center justify-between">
-                            <span class="text-2xl font-black text-primary">${items.price}</span>
-                            <button
-                                class="w-10 h-10 bg-on-background text-white rounded-lg flex items-center justify-center hover:bg-primary active:scale-95 transition-all">
-                                <span class="material-symbols-outlined">add_shopping_cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>`
-
-        grid.append(card)
-    })
+import product from "./assets/data.js"
+import { showProduct } from "./assets/product.js"
 
 
-}
+export const grid = document.querySelector("#product-grid")
+const cart_counter = document.querySelector("#cart-counter")
 showProduct()
+const addBtn = document.querySelector("#addtoCart")
+cart_counter.textContent = localStorage.getItem("cart-count")|| 0
+const cartData = JSON.parse(localStorage.getItem("cart")) || []
+
+
+// add to cart 
+
+function cart (){
+    let value = Number(cart_counter.textContent)
+
+    return function AddToCart (){
+        value++
+        localStorage.setItem("cart-count", value)
+        cart_counter.textContent = value
+    }
+}
+let add = cart()
+
+grid.addEventListener("click", (e)=>{
+   if(e.target.classList.contains("addtoCart")){
+        let id = e.target.dataset.id
+        const item = product.find((p)=> p.id == id)
+
+        cartData.push(item)
+        localStorage.setItem("cart", JSON.stringify(cartData))
+        add()
+        console.log(cartData)
+
+   }
+
+})
+
 
 
