@@ -29,7 +29,7 @@ export function showProduct() {
                         </div>
                         <h3 class="text-lg font-bold text-on-surface mb-2 leading-tight font-title-sm"> ${items.title}</h3>
                         <div class="mt-auto flex items-center justify-between">
-                            <span class="text-2xl font-black text-primary">${items.price}</span>
+                            <span class="text-2xl font-black text-primary"> $ ${items.price}</span>
                             <button
                                 class="w-10 h-10 bg-on-background text-white rounded-lg flex items-center justify-center hover:bg-primary active:scale-95 transition-all">
                                 <span class=" addtoCart material-symbols-outlined" id="addtoCart" data-id="${items.id}" >add_shopping_cart</span>

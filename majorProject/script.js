@@ -6,16 +6,16 @@ export const grid = document.querySelector("#product-grid")
 const cart_counter = document.querySelector("#cart-counter")
 showProduct()
 const addBtn = document.querySelector("#addtoCart")
-cart_counter.textContent = localStorage.getItem("cart-count")|| 0
+cart_counter.textContent = localStorage.getItem("cart-count") || 0
 const cartData = JSON.parse(localStorage.getItem("cart")) || []
 
 
 // add to cart 
 
-function cart (){
+function cart() {
     let value = Number(cart_counter.textContent)
 
-    return function AddToCart (){
+    return function AddToCart() {
         value++
         localStorage.setItem("cart-count", value)
         cart_counter.textContent = value
@@ -23,17 +23,23 @@ function cart (){
 }
 let add = cart()
 
-grid.addEventListener("click", (e)=>{
-   if(e.target.classList.contains("addtoCart")){
-        let id = e.target.dataset.id
-        const item = product.find((p)=> p.id == id)
+grid.addEventListener("click", (e) => {
+    if (e.target.classList.contains("addtoCart")) {
+        let id = e.target.dataset.id;
+        const item = product.find((p) => p.id == id);
 
-        cartData.push(item)
-        localStorage.setItem("cart", JSON.stringify(cartData))
-        add()
-        console.log(cartData)
+        let checkCart = cartData.find((cartItem) => cartItem.id == id);
 
-   }
+        if (checkCart) {
+            checkCart.quantity = (checkCart.quantity || 1) + 1;
+        } else {
+            cartData.push({ ...item, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cartData));
+        add();
+        console.log(cartData);
+    }
 
 })
 
