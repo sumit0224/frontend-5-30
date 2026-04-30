@@ -36,10 +36,7 @@
 ];
 
 
-let arr = [12, 13, 45, 60, 60]
 
-let total = arr.reduce((acc, curr)=>{
-    return acc + curr
-}, 0)
-console.log(total)
+
+
 export default product
